@@ -17,7 +17,7 @@ public class MemberEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private String memberId;
+	private Long memberId;
 	
 	@Column(nullable = true, unique = true)
 	private String userId;
@@ -38,15 +38,9 @@ public class MemberEntity {
 	private LocalDateTime createDate;
 	
 	@Column(nullable = true)
-	private LocalDateTime userDate;
+	private LocalDateTime updateDate;
 
-	public String getMemberId() {
-		return memberId;
-	}
-
-	public void setMemberId(String memberId) {
-		this.memberId = memberId;
-	}
+	
 
 	public String getUserId() {
 		return userId;
@@ -96,19 +90,34 @@ public class MemberEntity {
 		this.createDate = createDate;
 	}
 
-	public LocalDateTime getUserDate() {
-		return userDate;
+	
+
+	public LocalDateTime getUpdateDate() {
+		return updateDate;
 	}
 
-	public void setUserDate(LocalDateTime userDate) {
-		this.userDate = userDate;
+	public void setUpdateDate(LocalDateTime updateDate) {
+		this.updateDate = updateDate;
+	}
+
+	public Long getMemberId() {
+		return memberId;
+	}
+	
+	
+
+	public void setMemberId(Long memberId) {
+		this.memberId = memberId;
 	}
 
 	@Override
 	public String toString() {
 		return "MemberEntity [memberId=" + memberId + ", userId=" + userId + ", password=" + password + ", nickname="
-				+ nickname + ", name=" + name + ", tel=" + tel + ", createDate=" + createDate + ", userDate=" + userDate
-				+ "]";
+				+ nickname + ", name=" + name + ", tel=" + tel + ", createDate=" + createDate + ", updateDate="
+				+ updateDate + "]";
 	}
+
+	
+	
 
 }

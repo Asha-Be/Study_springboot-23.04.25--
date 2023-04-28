@@ -57,5 +57,16 @@ public class StreamTestCodeVerifier {
 			this.country = country;
 		}
 	}
+	
 	// 8번문제 : 매출액이 300이상인 애니메이션을 제조한 국가들의 목록을 주세요. 중복없이.
+
+	public static List<AnimeSummary> problem8(){
+		return StreamTestDataSupplier.getAnimeList()
+		.stream()
+		.filter(it -> it.revenue >= 300)
+		.map( it -> it.country)
+		.distinct()
+		.toList();
+	}	
+	
 }
